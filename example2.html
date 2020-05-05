@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <p>Alarm Status: <span id="timer">none</span></p>
+        <div>
+            <span onclick="alarm.stop()">Stop</span><br/>
+            <span onclick="alarm.restart()">Restart</span><br/>
+        </div>
+    </body>
+    <script src="./cleveralarm.js"></script>
+    <script>        
+        var alarm = new cleveralarm(
+            {
+                interval: 10,
+                onStart: function() { $("#timer").html("<b>Start</b>")},
+                onRestart: function() { $("#timer").html("<b>Restart</b>")},
+                onStop: function() { $("#timer").html("<b>Stop</b>")},
+                onEnd: function() { $("#timer").html("<b>End</b>")} 
+            });
+        alarm.start();
+    </script>
+</html>
