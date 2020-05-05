@@ -42,7 +42,9 @@ onEnd will be called once the timer runs out.
 Simple form allows the sending on an interval (in seconds) and a single callback function that will be called when the interval expires.
 
 ```
-var alarm = new cleveralarm(10,function(timer) { $("#timer").html("<b>Done</b>")});
+var alarm = new cleveralarm(10,function(timer) { 
+    $("#timer").html("<b>Done</b>")
+});
 alarm.start();
 ```
 
@@ -63,7 +65,7 @@ Clever alarm has the following methods
 alarm.Start()
 ```
 
-Starts the alarm. If the alarm has already been started an start is called again, different possible outcomes could occur accoring to the javascript interpreter. Rather use Restart() after the initial start
+Starts the alarm. If the alarm has already been started and start is called again, different possible outcomes could occur according to the javascript interpreter. Rather use Restart() after the initial start
 
 Calls the onStart event handler if provided.
 
@@ -72,7 +74,7 @@ Calls the onStart event handler if provided.
 alarm.Restart()
 ```
 
-Restarts the alarm. The restart start the timer with the original interval.
+Restarts the alarm. The restart starts the timer with the original interval.
 
 Calls the onRestart event handler if provided.
 
